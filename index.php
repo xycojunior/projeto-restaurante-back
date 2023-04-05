@@ -10,7 +10,6 @@
 
 <body>
     <?php
-
 class Pedido {
   private $itens;
   private $mesa;
@@ -130,7 +129,7 @@ echo "Mesa " . $pedido1->getMesa()->getNumero() . ": ";
 foreach ($pedido1->getItens() as $item) {
   echo $item->getQuantidade() . "x " . $item->getNome() . " ";
 }
-echo "- Total: R$ " . $pedido1->getTotal() . " reais\n";
+echo "- Total: R$ " . $pedido1->getTotal() . " reais\n\n";
 
 
 $mesa2 = new Mesa(2);
@@ -146,12 +145,12 @@ echo "Mesa " . $pedido2->getMesa()->getNumero() . ": ";
 foreach ($pedido2->getItens() as $item) {
   echo $item->getQuantidade() . "x " . $item->getNome() . " ";
 }
-echo "- Total: R$ " . $pedido2->getTotal() . " reais\n";
+echo "- Total: R$ " . $pedido2->getTotal() . " reais\n\n";
 
 $mesa3 = new Mesa(3);
 $pedido3 = new Pedido($mesa3);
 
-$item1 = new ItemPedido("Pizza", 1, 55.0);
+$item1 = new ItemPedido("hambúrgueres", 5, 38.0);
 $item2 = new ItemPedido("Refrigerante", 5, 5.5);
 
 $pedido3->adicionarItem($item1);
@@ -161,7 +160,7 @@ echo "Mesa " . $pedido3->getMesa()->getNumero() . ": ";
 foreach ($pedido3->getItens() as $item) {
   echo $item->getQuantidade() . "x " . $item->getNome() . " ";
 }
-echo "- Total: R$ " . $pedido3->getTotal() . " reais\n";
+echo "- Total: R$ " . $pedido3->getTotal() . " reais\n";
 ?>
 </body>
 
